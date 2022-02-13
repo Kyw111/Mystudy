@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script>
+	
+	function loginValidate() {
+		var formLogin = document.FormLogin; // 이 문서의 name값이 FormLogin인 요소를 formLogin에 대입
+		var userid = formLogin.userid.value; // 그 formLogin의 userid 값을 userid에 대입
+		var userpw = formLogin.userpw.value; // 그 formLogin의 userpw 값을 userpw에 대입
+		
+		if(userid == "" || userid.length==0 || userpw == "" || userpw.length == 0){
+			alert("아이디와 비밀번호를 입력하세요!");
+			return; // 이 함수를 호출한 처음으로 리턴시킴
+		}
+		formLogin.submit();
+	}
+	
+</script>
+</head>
+<body>
+	
+	<form name="FormLogin" method="post" action="FormLogin" encType="UTF-8">
+		<label>아이디 : <input type="text" name="userid"/></label><br/>
+		<label>비밀번호 : <input type="password" name="userpw"></label><br/>
+		<input type="submit" value="login" onClick="loginValidate()">
+		<input type="reset" value="초기화">	<!-- onClick으로 함수적용 -->
+		<input type="hidden" name="useraddress" value="경기도 성남시 분당구">
+	</form>
+	
+</body>
+</html>
